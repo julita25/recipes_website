@@ -9,8 +9,8 @@ const Card = ({ description, img, title }) => {
       bodyFill
       className="w-max"
     >
-      <img src={img} height="240" />
-      <Panel className="bg-blue-500" header={title} height="240">
+      <img src={img} className="w-56 h-42 object-cover" />
+      <Panel className="bg-blue-500 w-56 h-28" header={title}>
         <Tag color="green">{description}</Tag>
       </Panel>
 
