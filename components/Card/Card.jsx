@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useRouter } from "next/router";
-import { Button, Loader, Panel, Tag } from "rsuite";
+import { Panel, Tag } from "rsuite";
+import { string } from "prop-types";
+import UrlButton from "/UrlButton/UrlButton";
+import PageLoader from "/PageLoader/PageLoader";
 
 const Card = ({ description, img, title, id }) => {
   const router = useRouter();
   const pathname = router.asPath;
-  console.log("id", id);
-  const recipeId = id.split("#")[1]
+  const recipeId = id.split("#")[1];
+  //  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <Panel
@@ -16,13 +19,19 @@ const Card = ({ description, img, title, id }) => {
       className="w-max h-42"
     >
       <img src={img} className="w-56 h-42 object-cover" />
-      <Panel className="bg-blue-500 w-56 h-28" header={title}>
+      <Panel className="bg-indigo-500 w-56 h-28 space-between text-white" header={title}>
         <Tag color="green">{description}</Tag>
-        <Button onClick={() => router.push(pathname + `/${recipeId}`)}>Details</Button>
+        <UrlButton url={`${pathname}/${recipeId}`}>Details</UrlButton>
       </Panel>
-
-    </Panel>
+    </Panel >
   )
-}
+};
 
-export default Card
+Card.propTypes = {
+  description: string.isRequired,
+  img: string.isRequired,
+  title: string.isRequired,
+  id: string.isRequired
+};
+
+export default Card;
