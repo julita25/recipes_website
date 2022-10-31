@@ -1,33 +1,35 @@
 import React, { useState } from "react";
-import { Button } from "rsuite";
 import { func } from "prop-types";
 
 const FoodFilters = ({ onChange }) => {
   const [filter, setFilter] = useState("All");
-  const dietLabels = ["All", "Balanced", "Low-Sodium", "High-Fiber", "Low-Fat"]
+  const dietLabels = ["All", "Balanced", "Low-Sodium", "High-Fiber", "Low-Fat"];
 
   const onSelectFilter = (item) => {
     onChange(item);
     setFilter(item);
   };
 
-  console.log("item filter", filter)
-
   return (
-    dietLabels.map((item) => (
-      <Button
-        onClick={() => onSelectFilter(item)}
-        className={`mx-3 ${item === filter ? "bg-indigo-600" : "bg-blue-400"}`}
-        color="violet"
-        appearance="primary"
-      >{item}
-      </Button>
-    ))
+    <div className="flex flex-col space-y-8 w-max">
+      <div className="flex flex-col space-y-4">
+        <div>Filter by diet</div>
+        {dietLabels.map((item) => (
+          <button
+            type="button"
+            onClick={() => onSelectFilter(item)}
+            className={`${item === filter ? "bg-indigo-800 hover" : "hover:bg-blue-800 bg-blue-500"} rounded-lg p-1 py-2 text-white`}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 };
 
 FoodFilters.propTypes = {
   onChange: func.isRequired
-}
+};
 
-export default FoodFilters
+export default FoodFilters;

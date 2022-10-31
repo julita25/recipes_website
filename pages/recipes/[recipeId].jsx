@@ -9,6 +9,7 @@ import UrlButton from "/components/UrlButton/UrlButton";
 const RecipeDetails = () => {
   const router = useRouter();
   const { recipeId } = router.query;
+  console.log(recipeId);
   const [foodRecipe, setFoodRecipe] = useState()
   const [error, setError] = useState()
 
@@ -28,8 +29,10 @@ const RecipeDetails = () => {
   console.log(foodRecipe);
 
   useEffect(() => {
-    fetchRecipeById();
-  }, []);
+    if (recipeId) {
+      // fetchRecipeById();
+    }
+  }, [recipeId]);
 
   if (!foodRecipe) return <PageLoader />
 
@@ -42,11 +45,11 @@ const RecipeDetails = () => {
             Calories: {Math.round(foodRecipe.calories)}
           </div>
           <div className="flex text-xl text-white space-x-2">
-            <div>Dish type</div>
+            <div>Dish type: </div>
             <Tag color="violet">{foodRecipe.dishType}</Tag>
           </div>
           <div className="flex text-xl text-white space-x-2">
-            <div>Meal type</div>
+            <div>Meal type: </div>
             <Tag color="violet">{foodRecipe.mealType}</Tag>
           </div>
         </div>
