@@ -16,6 +16,7 @@ const FoodFilters = ({ onChange }) => {
         <div>Filter by diet</div>
         {dietLabels.map((item) => (
           <button
+            key={item}
             type="button"
             onClick={() => onSelectFilter(item)}
             className={`${item === filter ? "bg-indigo-800 hover" : "hover:bg-blue-800 bg-blue-500"} rounded-lg p-1 py-2 text-white`}
