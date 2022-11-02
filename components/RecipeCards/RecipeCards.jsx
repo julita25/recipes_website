@@ -8,7 +8,7 @@ import { APP_ID, APP_KEY } from "../../constants/apiConstants";
 
 const RecipeCards = ({ filters, isGlutenFree, searchRecipe }) => {
   const router = useRouter();
-  const pathname = router.asPath;
+  const { pathname } = router;
   const [recipes, setRecipes] = useState();
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState();
@@ -78,7 +78,7 @@ const RecipeCards = ({ filters, isGlutenFree, searchRecipe }) => {
               header={(
                 <div className="flex flex-col space-y-2 w-full">
                   <div className="flex text-white">{label}</div>
-                  <UrlButton url={`${pathname}/recipes/${uri?.split("#")[1]}`} color="yellow" className="bg-yellow-500">Details</UrlButton>
+                  <UrlButton url={`${pathname}recipes/${uri?.split("#")[1]}`} color="yellow" className="bg-yellow-500">Details</UrlButton>
                 </div>
               )}
             />
