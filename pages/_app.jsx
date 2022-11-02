@@ -2,7 +2,7 @@ import React from "react";
 import { instanceOf } from "prop-types";
 import "../styles/globals.css";
 
-const App = ({ Component, pageProps }) => <Component {...pageProps} />
+const App = ({ Component, pageProps }) => <Component {...pageProps} />;
 
 export default App;
 
