@@ -67,21 +67,20 @@ const RecipeCards = ({ filters, isGlutenFree, searchRecipe }) => {
             shaded
             bordered
             bodyFill
-            className="bg-blue-500 pb-2"
+            className="pb-2 border border-transparent bg-gray-100"
           >
             <div>
               <Tag className="absolute" color="green">{mealType}</Tag>
               <img src={image} className="w-full h-42 object-cover" alt={label} />
             </div>
             <Panel
-              className="h-28 rounded-none pb-2"
+              className="h-28 rounded-none pb-2 overflow-visible"
               header={(
-                <div className="flex flex-col w-full gap-2">
-                  <div className="flex text-white">{label}</div>
+                <div className="flex flex-col w-full gap-2 text-black">
+                  <div className="flex">{label}</div>
                   <UrlButton
                     url={`${pathname}recipes/${uri?.split("#")[1]}`}
-                    color="violet"
-                    className="bg-indigo-700 border border-2 border-white"
+                    className="bg-yellow-600 border border-2 border-white"
                   >
                     Details
                   </UrlButton>

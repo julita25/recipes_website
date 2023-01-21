@@ -41,27 +41,27 @@ const RecipeDetails = () => {
       {error && <Message type="error" showIcon header={error} />}
       <div className="bg-yellow-700 h-42 p-5 space-y-10">
         <div className="text-white text-3xl">{foodRecipe.label}</div>
-        <div className="flex space-x-10">
+        <div className="flex md:gap-10 gap-5">
           <div className="text-xl text-white">
             Calories:
             {Math.round(foodRecipe.calories)}
           </div>
           <div className="flex text-xl text-white space-x-2">
             <div>Dish type: </div>
-            <Tag color="violet">{foodRecipe.dishType}</Tag>
+            <Tag color="yellow">{foodRecipe.dishType}</Tag>
           </div>
           <div className="flex text-xl text-white space-x-2">
             <div>Meal type: </div>
-            <Tag color="violet">{foodRecipe.mealType}</Tag>
+            <Tag color="yellow">{foodRecipe.mealType}</Tag>
           </div>
         </div>
       </div>
-      <div className="flex p-4 space-x-5">
-        <div className="w-1/3">
+      <div className="flex flex-col md:p-4 md:space-x-5 md:flex-row gap-5 p-10">
+        <div className="md:w-1/3 w-full">
           <img className="w-full" src={foodRecipe.image} alt={foodRecipe.label} />
           <Panel
             header="Ingredients"
-            className="bg-white"
+            className="bg-white text-black"
           >
             {foodRecipe.ingredientLines.map((item) => (
               <div>
@@ -76,7 +76,7 @@ const RecipeDetails = () => {
             </Panel>
           </div>
         </div>
-        <div className="w-3/4">
+        <div className="md:w-3/4 w-full">
           <NutritionList dailyValue={foodRecipe.digest} />
         </div>
       </div>

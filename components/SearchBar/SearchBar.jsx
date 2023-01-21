@@ -9,7 +9,7 @@ const SearchBar = ({ onChange }) => {
   return (
     <InputGroup>
       <Input size="lg" value={val} onChange={setVal} placeholder="Search" />
-      <InputGroup.Button onClick={() => onChange(val)}>
+      <InputGroup.Button onClick={() => onChange(val)} className="bg-yellow-600 hover:bg-yellow-700 text-white hover:text-white">
         <Search />
       </InputGroup.Button>
     </InputGroup>

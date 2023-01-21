@@ -13,14 +13,14 @@ const FoodFilters = ({ onChange }) => {
   return (
     <div className="flex flex-col space-y-8 w-max">
       <div className="flex flex-col space-y-4">
-        <div>Filter by diet</div>
+        <div className="font-bold">Filter by diet</div>
         <div className="flex md:flex-col gap-2">
           {dietLabels.map((item) => (
             <button
               key={item}
               type="button"
               onClick={() => onSelectFilter(item)}
-              className={`${item === filter ? "bg-indigo-800 hover" : "hover:bg-blue-800 bg-blue-500"} rounded-lg p-2 text-white md:text-sm text-xs `}
+              className={`${item === filter ? "bg-yellow-700" : "bg-yellow-600 hover:bg-yellow-700"} rounded-lg p-2 text-white md:text-sm text-xs `}
             >
               {item}
             </button>

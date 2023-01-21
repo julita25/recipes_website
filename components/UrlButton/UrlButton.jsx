@@ -24,8 +24,8 @@ UrlButton.propTypes = {
 };
 
 UrlButton.defaultProps = {
-  color: "blue",
-  className: "bg-blue-500"
+  color: "orange",
+  className: "bg-yellow-700"
 };
 
 export default UrlButton;
