@@ -11,7 +11,7 @@ const GlutenFreeToggleButton = ({ onChange }) => {
   });
 
   return (
-    <div className="mt-10 flex flex-col">
+    <div className="mt-5 flex flex-col">
       <div>Only gluten free foods</div>
       <Toggle
         data-testid="toggle-btn"

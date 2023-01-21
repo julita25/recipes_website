@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo:regular,bold,italic&subset=latin,latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Karla:regular,bold,italic&subset=latin,latin-ext');
+@import url("https://fonts.googleapis.com/css2?family=Paprika&display=swap");
 
 :root {
-  --font-title: Heebo;
+  --font-title: Paprika;
   --font-default: Karla;
   --font-small: Karla;
 }

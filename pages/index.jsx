@@ -13,14 +13,14 @@ const HomePage = () => {
   const isEmptytSearch = !searchRecipe && foodFilters === "All" && !isGlutenFree;
 
   return (
-    <div className="flex w-full justify-center pt-10">
-      <div className="flex space-x-10">
-        <div className="flex flex-col mt-16">
+    <div className="flex flex-col w-screen justify-center items-center md:p-10 p-5">
+      <div className="text-3xl flex md:mb-10 font-bold">Find the best recipe!</div>
+      <div className="flex flex-col gap-10 justify-center md:flex-row">
+        <div className="md:mt-16 mt-10">
           <FoodFilters onChange={setFoodFilters} />
           <GlutenFreeToggleButton onChange={setIsGlutenFree} />
         </div>
-        <div className="w-[65rem] space-y-5">
-          <div className="text-3xl col-span-4">Find the best recipe for you!</div>
+        <div className="space-y-5 lg:w-[62rem] md:w-[35rem] w-[22rem]">
           <SearchBar onChange={setSearchRecipe} />
           {isEmptytSearch ? (
             <Message

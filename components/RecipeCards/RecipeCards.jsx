@@ -59,7 +59,7 @@ const RecipeCards = ({ filters, isGlutenFree, searchRecipe }) => {
     <div className="flex flex-col space-y-5">
       {message && <Message type="error" showIcon header={message} />}
       {error && <Message type="error" showIcon header={error} />}
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid lg:grid-cols-4 gap-8 sm:grid-cols-2 grid-cols-1">
         {recipes?.map(({
           label, image, mealType, uri
         }) => (
@@ -67,18 +67,24 @@ const RecipeCards = ({ filters, isGlutenFree, searchRecipe }) => {
             shaded
             bordered
             bodyFill
-            className="w-full h-42"
+            className="bg-blue-500 pb-2"
           >
             <div>
               <Tag className="absolute" color="green">{mealType}</Tag>
               <img src={image} className="w-full h-42 object-cover" alt={label} />
             </div>
             <Panel
-              className="bg-yellow-700 h-28 rounded-none"
+              className="h-28 rounded-none pb-2"
               header={(
-                <div className="flex flex-col space-y-2 w-full">
+                <div className="flex flex-col w-full gap-2">
                   <div className="flex text-white">{label}</div>
-                  <UrlButton url={`${pathname}recipes/${uri?.split("#")[1]}`} color="yellow" className="bg-yellow-500">Details</UrlButton>
+                  <UrlButton
+                    url={`${pathname}recipes/${uri?.split("#")[1]}`}
+                    color="violet"
+                    className="bg-indigo-700 border border-2 border-white"
+                  >
+                    Details
+                  </UrlButton>
                 </div>
               )}
             />
