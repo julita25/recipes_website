@@ -8,14 +8,15 @@
 @import "tailwindcss/utilities";
 
 html {
-  height: max-content;
+  height: 100%;
 }
 
 body {
-  background-color: var(--color-secondary);
   background-image: url("/bg.jpg");
+  background-attachment: fixed;
   background-repeat: repeat-y;
   background-size: cover;
+  background-position: center;
   font-family: var(--font-default);
   font-size: 14px;
   color: aliceblue;

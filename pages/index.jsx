@@ -14,13 +14,13 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col w-screen justify-center items-center md:p-10 p-5">
-      <div className="text-3xl flex md:mb-10 font-bold">Find the best recipe!</div>
+      <div className="md:text-5xl text-3xl flex md:mb-10 font-bold">Find the best recipe!</div>
       <div className="flex flex-col gap-10 justify-center md:flex-row">
         <div className="md:mt-16 mt-10">
           <FoodFilters onChange={setFoodFilters} />
           <GlutenFreeToggleButton onChange={setIsGlutenFree} />
         </div>
-        <div className="space-y-5 lg:w-[62rem] md:w-[35rem] w-[22rem]">
+        <div className="space-y-5 lg:w-[60rem] md:w-[35rem] w-[22rem]">
           <SearchBar onChange={setSearchRecipe} />
           {isEmptytSearch ? (
             <Message
