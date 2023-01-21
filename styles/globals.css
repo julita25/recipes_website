@@ -8,8 +8,7 @@
 @import "tailwindcss/utilities";
 
 html {
-  height: 100%;
-  width: 100%;
+  height: max-content;
 }
 
 body {
